@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | WordPress Web Designer & Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --card: rgba(255,255,255,0.08);
+    --text: #ffffff;
+    --accent: #3b82f6;
+}
+
+.light {
+    --bg: #f4f6f9;
+    --card: rgba(255,255,255,0.6);
+    --text: #111;
+    --accent: #2563eb;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition:0.3s ease;
+}
+
+.container {
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.glass {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:30px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+h1,h2,h3 {
+    margin-bottom:15px;
+}
+
+.hero {
+    text-align:center;
+}
+
+.btn {
+    display:inline-block;
+    padding:10px 20px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+    margin-top:10px;
+}
+
+.toggle-btn {
+    position:fixed;
+    top:20px;
+    right:20px;
+    cursor:pointer;
+    background:var(--accent);
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+/* Skills */
+.skill {
+    margin-bottom:15px;
+}
+
+.progress {
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar {
+    height:10px;
+    width:0;
+    background:var(--accent);
+    transition:2s ease;
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.portfolio-item {
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    backdrop-filter:blur(10px);
+}
+
+/* Contact Form */
+form input, form textarea {
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:none;
+}
+
+form button {
+    padding:10px 20px;
+    border:none;
+    background:var(--accent);
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+footer {
+    text-align:center;
+    padding:20px;
+    opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle-btn" onclick="toggleTheme()">Toggle Theme</div>
+
+<div class="container">
+
+<div class="glass hero">
+    <h1>Your Name</h1>
+    <p>Top Rated WordPress Web Designer & Developer | 5+ Years Experience</p>
+    <a href="resume.pdf" download class="btn">Download Resume (PDF)</a>
+</div>
+
+<div class="glass">
+    <h2>About Me</h2>
+    <p>I help businesses build high-converting WordPress websites that are fast, SEO optimized, and mobile responsive. Completed 100+ projects worldwide with 5-star client feedback.</p>
+</div>
+
+<div class="glass">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        <p>WordPress Development</p>
+        <div class="progress"><div class="progress-bar" data-width="95%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>WooCommerce</p>
+        <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Elementor / Divi</p>
+        <div class="progress"><div class="progress-bar" data-width="92%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Speed Optimization</p>
+        <div class="progress"><div class="progress-bar" data-width="88%"></div></div>
+    </div>
+
+</div>
+
+<div class="glass">
+    <h2>Portfolio Highlights</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <h3>Corporate Website</h3>
+            <p>Custom theme development with SEO optimization.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>WooCommerce Store</h3>
+            <p>Fully optimized eCommerce with Stripe & PayPal integration.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Landing Page Funnel</h3>
+            <p>High-converting Elementor landing page for paid ads.</p>
+        </div>
+    </div>
+</div>
+
+<div class="glass">
+    <h2>Hire Me</h2>
+    <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<footer>
+© 2026 Your Name | Available for Freelance Projects
+</footer>
+
+</div>
+
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+
+window.onload = function(){
+    document.querySelectorAll(".progress-bar").forEach(bar=>{
+        bar.style.width = bar.getAttribute("data-width");
+    });
+}
+</script>
+
+</body>
+</html>
